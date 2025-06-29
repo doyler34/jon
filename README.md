@@ -93,7 +93,7 @@ SPOTIFY_CLIENT_SECRET=your-spotify-client-secret
 
 ## 📱 Admin Access
 
-1. Visit `/studio-portal-2024/login`
+1. Visit 'your url'
 2. Enter admin password
 3. Access dashboard to manage content
 4. Click "View Website" to see main site
