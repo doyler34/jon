@@ -112,7 +112,7 @@ export default function Home() {
       <section className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 to-pink-900/50"></div>
         <Image
-          src={siteContent?.hero?.backgroundImage || displayArtistData.images?.[0]?.url || "/placeholder.svg?height=1080&width=1920"}
+          src={siteContent?.hero?.heroImage || siteContent?.hero?.backgroundImage || displayArtistData.images?.[0]?.url || "/placeholder.svg?height=1080&width=1920"}
           alt="Jon Spirit Hero Background"
           fill
           className="object-cover"

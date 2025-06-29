@@ -93,7 +93,7 @@ SPOTIFY_CLIENT_SECRET=your-spotify-client-secret
 
 ## 📱 Admin Access
 
-1. Visit 'your url'
+1. Visit `/studio-portal-2024/login`
 2. Enter admin password
 3. Access dashboard to manage content
 4. Click "View Website" to see main site
@@ -109,4 +109,55 @@ Admins can manage:
 
 ## 📄 License
 
-Private project for Jon Spirit. 
+Private project for Jon Spirit.
+
+## 🖧 Production Nginx Config Example
+
+Here is a recommended Nginx config for deploying this site on a VPS:
+
+```
+server {
+    listen 443 ssl;
+    server_name jonspirit.com www.jonspirit.com;
+
+    ssl_certificate /etc/letsencrypt/live/jonspirit.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/jonspirit.com/privkey.pem;
+
+    # Serve Next.js static assets directly
+    location /_next/static/ {
+        alias /var/www/.next/static/;
+        add_header Cache-Control "public, max-age=31536000, immutable";
+    }
+
+    # Serve uploaded images
+    location /uploads/ {
+        alias /var/www/public/uploads/;
+        add_header Cache-Control "public, max-age=31536000, immutable";
+    }
+
+    # Serve public static files (for /public)
+    location /public/ {
+        alias /var/www/public/;
+        add_header Cache-Control "public, max-age=31536000, immutable";
+    }
+
+    # Proxy everything else to Next.js
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+server {
+    listen 80;
+    server_name jonspirit.com www.jonspirit.com;
+    return 301 https://$host$request_uri;
+}
+```
+
+- Replace `/var/www` with your actual project directory if different.
+- After editing, run `sudo nginx -t` and `sudo systemctl reload nginx`. 
