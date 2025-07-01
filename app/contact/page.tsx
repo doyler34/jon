@@ -19,14 +19,14 @@ import {
 } from "lucide-react"
 
 export default function ContactPage() {
-  const [contactInfo, setContactInfo] = useState<any>(null)
+  const [siteContent, setSiteContent] = useState<any>(null)
   useEffect(() => {
     fetch("/api/admin/content")
       .then(res => res.json())
-      .then(data => setContactInfo(data.contact || {}))
+      .then(data => setSiteContent(data))
   }, [])
 
-  const businessServices = [
+  const businessServices = siteContent?.businessServices || [
     {
       title: "Live Performances",
       description: "Book Jon Spirit for live shows, concerts, and special events",
@@ -105,7 +105,7 @@ export default function ContactPage() {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Get in Touch</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto justify-center">
             <Card className="bg-card border border-border hover:border-purple-500/50 transition-all duration-300">
               <CardContent className="p-6 text-center">
                 <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -116,30 +116,12 @@ export default function ContactPage() {
                 <Button 
                   variant="outline" 
                   className="border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white"
-                  onClick={() => window.open(`mailto:${contactInfo?.email}`)}
+                  onClick={() => window.open(`mailto:${siteContent?.contact?.email}`)}
                 >
-                  {contactInfo?.email}
+                  {siteContent?.contact?.email}
                 </Button>
               </CardContent>
             </Card>
-
-            <Card className="bg-card border border-border hover:border-purple-500/50 transition-all duration-300">
-              <CardContent className="p-6 text-center">
-                <div className="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Phone className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Phone</h3>
-                <p className="text-muted-foreground mb-4">For urgent inquiries</p>
-                <Button 
-                  variant="outline" 
-                  className="border-pink-500 text-pink-400 hover:bg-pink-500 hover:text-white"
-                  onClick={() => window.open(`tel:${contactInfo?.phone}`)}
-                >
-                  {contactInfo?.phone}
-                </Button>
-              </CardContent>
-            </Card>
-
             <Card className="bg-card border border-border hover:border-purple-500/50 transition-all duration-300">
               <CardContent className="p-6 text-center">
                 <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -147,7 +129,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Location</h3>
                 <p className="text-muted-foreground mb-4">Based in Ontario, Canada</p>
-                <p className="text-foreground font-semibold">{contactInfo?.location}</p>
+                <p className="text-foreground font-semibold">{siteContent?.contact?.location}</p>
               </CardContent>
             </Card>
           </div>
@@ -159,8 +141,11 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12">Business Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {businessServices.map((service) => {
-              const Icon = service.icon
+            {businessServices.map((service: any) => {
+              const iconMap = { Music, Calendar, Users, Building };
+              const Icon = typeof service.icon === 'string' && iconMap[service.icon as keyof typeof iconMap]
+                ? iconMap[service.icon as keyof typeof iconMap]
+                : Music;
               return (
                 <Card key={service.title} className="bg-card border border-border hover:border-purple-500/50 transition-all duration-300">
                   <CardContent className="p-6">
@@ -172,7 +157,7 @@ export default function ContactPage() {
                         <h3 className="text-xl font-bold mb-2">{service.title}</h3>
                         <p className="text-muted-foreground mb-4">{service.description}</p>
                         <div className="space-y-2">
-                          {service.features.map((feature) => (
+                          {service.features.map((feature: any) => (
                             <div key={feature} className="flex items-center gap-2">
                               <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
                               <span className="text-sm">{feature}</span>
@@ -221,11 +206,11 @@ export default function ContactPage() {
                     <Building className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold mb-2">Management</h3>
-                  <p className="text-muted-foreground mb-4">{contactInfo?.management}</p>
+                  <p className="text-muted-foreground mb-4">{siteContent?.contact?.management}</p>
                   <Button 
                     variant="outline" 
                     className="border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white"
-                    onClick={() => window.open(`mailto:${contactInfo?.booking}`)}
+                    onClick={() => window.open(`mailto:${siteContent?.contact?.booking}`)}
                   >
                     Contact Management
                   </Button>
@@ -242,7 +227,7 @@ export default function ContactPage() {
                   <Button 
                     variant="outline" 
                     className="border-pink-500 text-pink-400 hover:bg-pink-500 hover:text-white"
-                    onClick={() => window.open(`mailto:${contactInfo?.press}`)}
+                    onClick={() => window.open(`mailto:${siteContent?.contact?.press}`)}
                   >
                     Press Contact
                   </Button>
@@ -264,7 +249,7 @@ export default function ContactPage() {
             <Button
               size="lg"
               className="bg-white text-purple-900 hover:bg-gray-100 px-8 py-4 text-lg"
-              onClick={() => window.open(`mailto:${contactInfo?.booking}`)}
+              onClick={() => window.open(`mailto:${siteContent?.contact?.booking}`)}
             >
               <Mail className="mr-2 h-5 w-5" />
               Send Booking Inquiry

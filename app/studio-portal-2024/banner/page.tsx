@@ -239,8 +239,10 @@ export default function BannerManager() {
                         <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                             {formData.title || 'Your Title Here'}
                         </h1>
-                        <p className="text-lg md:text-xl mb-6 text-gray-200">{formData.subtitle || 'Your subtitle here'}</p>
-                        <p className="text-md mb-6 text-gray-300">
+                        <p className="text-lg md:text-xl mb-2 text-white font-semibold drop-shadow-[0_4px_16px_rgba(0,0,0,1)] bg-black/70 px-4 py-2 rounded-lg inline-block w-fit mx-auto">
+                            {formData.subtitle || 'Your subtitle here'}
+                        </p>
+                        <p className="text-md mb-6 text-white drop-shadow-[0_4px_16px_rgba(0,0,0,1)] bg-black/80 px-4 py-2 rounded-lg inline-block w-fit mx-auto">
                             {displayArtistData.followers?.total?.toLocaleString() || "..."} followers on Spotify
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">

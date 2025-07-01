@@ -118,14 +118,16 @@ export default function Home() {
           className="object-cover"
           priority
         />
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bottom-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent z-10 pointer-events-none"></div>
         <div className="relative z-20 text-center max-w-4xl mx-auto px-4">
           <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
             {siteContent?.hero?.title || 'JON SPIRIT'}
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-muted-foreground">
+          <p className="text-xl md:text-2xl mb-4 text-white font-semibold drop-shadow-[0_6px_24px_rgba(0,0,0,0.85)]">
             {siteContent?.hero?.subtitle || 'Interdimensional Rock & Roll'}
           </p>
-          <p className="text-lg mb-8 text-muted-foreground">
+          <p className="text-lg mb-8 text-white drop-shadow-[0_6px_24px_rgba(0,0,0,0.85)]">
             {displayArtistData.followers?.total?.toLocaleString() || "25,000"} followers on Spotify
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

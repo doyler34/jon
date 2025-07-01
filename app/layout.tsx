@@ -5,6 +5,7 @@ import CookieConsentBanner from "@/components/cookie-consent-banner"
 import AdminPortalButton from "@/components/admin-portal-button"
 import { initializeCookieManagement } from "@/lib/cookies"
 import Navigation from "@/components/navigation"
+import Footer from "@/components/footer"
 
 export const metadata: Metadata = {
   title: "Jon Spirit - Music Artist",
@@ -32,6 +33,7 @@ export default function RootLayout({
         {children}
         <AdminPortalButton />
         <CookieConsentBanner />
+        <Footer />
         <script
           dangerouslySetInnerHTML={{
             __html: `

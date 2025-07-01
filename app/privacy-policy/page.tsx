@@ -20,8 +20,6 @@ export default function PrivacyPolicy() {
         <h1 className="text-4xl font-bold mb-8">Privacy-First Policy</h1>
         
         <div className="prose prose-invert max-w-none space-y-6">
-          <p className="text-muted-foreground">Last updated: {new Date().toLocaleDateString()}</p>
-
           <section className="space-y-4">
             <h2 className="text-2xl font-semibold">1. Our Philosophy: Zero Personal Data</h2>
             <p>

@@ -222,7 +222,7 @@ export default function MusicPage() {
                   className="bg-card border-border hover:border-purple-500/50 transition-all duration-300"
                 >
                   <CardContent className="p-6">
-                    <div className="flex items-center gap-4">
+                    <div className="flex flex-col sm:flex-row items-center gap-4">
                       <div className="text-3xl font-bold text-purple-400 w-12 text-center">{index + 1}</div>
                       <Image
                         src={track.album.images?.[2]?.url || "/placeholder.svg?height=64&width=64"}

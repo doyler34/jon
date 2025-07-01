@@ -145,6 +145,27 @@ export default function AdminDashboard() {
           </CardContent>
         </Card>
 
+        {/* Business Services */}
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Settings className="h-5 w-5" />
+              Business Services
+            </CardTitle>
+            <CardDescription>
+              Manage business services, offerings, and features
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button 
+              className="w-full" 
+              onClick={() => window.location.href = '/studio-portal-2024/services'}
+            >
+              Manage Services
+            </Button>
+          </CardContent>
+        </Card>
+
         {/* Settings */}
         <Card>
           <CardHeader>

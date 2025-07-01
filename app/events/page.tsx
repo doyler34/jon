@@ -35,21 +35,9 @@ export default function EventsPage() {
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
     return {
-      full: date.toLocaleDateString('en-US', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      }),
-      short: date.toLocaleDateString('en-US', {
-        month: 'short',
-        day: 'numeric',
-        year: 'numeric'
-      }),
-      time: date.toLocaleTimeString('en-US', {
-        hour: '2-digit',
-        minute: '2-digit'
-      })
+      full: date.toLocaleDateString(),
+      short: date.toLocaleDateString(),
+      time: date.toLocaleTimeString()
     }
   }
 

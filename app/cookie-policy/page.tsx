@@ -115,9 +115,6 @@ export default function CookiePolicy() {
           </div>
 
           <div className="mt-8 text-center">
-            <p className="text-sm text-muted-foreground">
-              Last updated: {new Date().toLocaleDateString()}
-            </p>
             <div className="flex justify-center gap-4 mt-4">
               <Link href="/privacy-policy">
                 <Button variant="outline" size="sm">Privacy Policy</Button>

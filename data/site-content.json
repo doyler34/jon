@@ -3,7 +3,7 @@
     "title": "Jon Spirit",
     "subtitle": "Interdimensional Rock & Roll",
     "backgroundVideo": "/videos/concert-background.mp4",
-    "heroImage": ""
+    "heroImage": "/uploads/ac71bcdd-ac04-489b-99e0-35a644f9ff8d.jpg"
   },
   "about": {
     "title": "About Jon Spirit",
@@ -38,5 +38,55 @@
       "youtube": "https://youtube.com/jonspirit",
       "tiktok": "https://www.tiktok.com/@jonspirit"
     }
-  }
+  },
+  "businessServices": [
+    {
+      "title": "Live Performances",
+      "description": "Book Jon Spirit for live shows, concerts, and special events",
+      "icon": "Music",
+      "color": "bg-purple-600",
+      "features": [
+        "Solo performances",
+        "Band shows",
+        "Acoustic sets",
+        "Custom arrangements"
+      ]
+    },
+    {
+      "title": "Event Booking",
+      "description": "Available for private events, corporate functions, and special occasions",
+      "icon": "Calendar",
+      "color": "bg-pink-600",
+      "features": [
+        "Private parties",
+        "Corporate events",
+        "Weddings",
+        "Product launches"
+      ]
+    },
+    {
+      "title": "Collaborations",
+      "description": "Open to creative collaborations with other artists and brands",
+      "icon": "Users",
+      "color": "bg-blue-600",
+      "features": [
+        "Music collaborations",
+        "Brand partnerships",
+        "Content creation",
+        "Studio sessions"
+      ]
+    },
+    {
+      "title": "Licensing",
+      "description": "Music licensing for commercial use, films, and media projects",
+      "icon": "Building",
+      "color": "bg-green-600",
+      "features": [
+        "Commercial licensing",
+        "Film & TV",
+        "Advertising",
+        "Digital media"
+      ]
+    }
+  ]
 }

@@ -294,11 +294,7 @@ export default function EventsManager() {
                 )}
                 <div className="flex items-center gap-2 mb-2">
                   <Badge variant="secondary" className="bg-purple-600 text-white">
-                    {new Date(event.date).toLocaleDateString('en-US', { 
-                      month: 'short', 
-                      day: 'numeric',
-                      year: 'numeric'
-                    })}
+                    {event.date}
                   </Badge>
                   <Badge variant="outline" className="border-green-500 text-green-600">
                     Upcoming
