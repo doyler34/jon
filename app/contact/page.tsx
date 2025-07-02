@@ -194,50 +194,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Management Info */}
-      <section className="py-20 bg-gradient-to-r from-purple-900/10 to-pink-900/10">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-8">Management & Business</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card className="bg-card border border-border">
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Building className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">Management</h3>
-                  <p className="text-muted-foreground mb-4">{siteContent?.contact?.management}</p>
-                  <Button 
-                    variant="outline" 
-                    className="border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white"
-                    onClick={() => window.open(`mailto:${siteContent?.contact?.booking}`)}
-                  >
-                    Contact Management
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-card border border-border">
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Globe className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">Press & Media</h3>
-                  <p className="text-muted-foreground mb-4">For press inquiries and media requests</p>
-                  <Button 
-                    variant="outline" 
-                    className="border-pink-500 text-pink-400 hover:bg-pink-500 hover:text-white"
-                    onClick={() => window.open(`mailto:${siteContent?.contact?.press}`)}
-                  >
-                    Press Contact
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Call to Action */}
       <section className="py-20 bg-gradient-to-r from-purple-900 to-pink-900">
         <div className="container mx-auto px-4 text-center">
