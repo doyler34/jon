@@ -17,8 +17,7 @@ export default function AdminPortalButton() {
       // Only show on main site pages (not admin pages)
       const isMainSite = !pathname.startsWith('/studio-portal-2024')
       
-      // For now, let's make it always visible on main site for testing
-      setIsVisible(isMainSite)
+      setIsVisible(isMainSite && hasToken)
     }
 
     checkAuth()
