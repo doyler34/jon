@@ -15,8 +15,7 @@ export default function AdminPortalButton() {
       const hasToken = document.cookie.includes('admin_token=')
       
       // Only show on main site pages (not admin pages)
-      const isMainSite = !pathname.startsWith('/studio-portal-2024') && 
-                        pathname !== '/coming-soon'
+      const isMainSite = !pathname.startsWith('/studio-portal-2024')
       
       // For now, let's make it always visible on main site for testing
       setIsVisible(isMainSite)

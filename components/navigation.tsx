@@ -11,9 +11,8 @@ export default function Navigation() {
   const [scrollY, setScrollY] = useState(0)
   const pathname = usePathname()
 
-  // Hide nav on /coming-soon and all /studio-portal-2024 routes
+  // Hide nav on all /studio-portal-2024 routes
   if (
-    pathname === "/coming-soon" ||
     pathname.startsWith("/studio-portal-2024")
   ) return null;
 

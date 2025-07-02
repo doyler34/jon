@@ -17,7 +17,6 @@ const PUBLIC_PATHS = [
   '/favicon.ico',
   '/_next',
   '/api/_next',
-  '/coming-soon',
   '/studio-portal-2024/login',
 ]
 
@@ -65,16 +64,6 @@ export function middleware(request: NextRequest) {
   }
 
   // For all other routes (main website), check if user is authenticated
-  // If not authenticated, redirect to coming-soon page
-  const token = request.cookies.get('admin_token')?.value
-  
-  if (!token) {
-    console.log('No token found for main site, redirecting to coming-soon');
-    // Redirect to coming-soon page if not authenticated
-    return NextResponse.redirect(new URL('/coming-soon', request.url))
-  }
-
-  // For now, just check if token exists (JWT verification will be done in API routes)
-  console.log('Main site token found, allowing access');
+  // Allow all users to access main site
   return NextResponse.next()
 } 

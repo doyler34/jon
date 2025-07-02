@@ -37,7 +37,6 @@ my-app/
 ## 🔐 Environment Variables
 
 Required for production:
-
 ```bash
 ADMIN_PASSWORD=your-secure-admin-password
 JWT_SECRET=your-super-secure-jwt-secret-key
@@ -64,7 +63,6 @@ SPOTIFY_CLIENT_SECRET=your-spotify-client-secret
    ```
 
 4. **Access the app**:
-   - Coming-soon: `http://localhost:3000/coming-soon`
    - Admin login: `http://localhost:3000/studio-portal-2024/login`
    - Main website: `http://localhost:3000/` (requires login)
 
@@ -150,7 +148,6 @@ server {
         proxy_set_header Host $host;
         proxy_cache_bypass $http_upgrade;
     }
-}
 
 server {
     listen 80;
