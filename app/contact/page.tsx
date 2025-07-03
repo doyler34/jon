@@ -113,13 +113,12 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Email</h3>
                 <p className="text-muted-foreground mb-4">Primary contact method</p>
-                <Button 
-                  variant="outline" 
-                  className="border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white"
-                  onClick={() => window.open(`mailto:${siteContent?.contact?.email}`)}
+                <a
+                  href={`mailto:${siteContent?.contact?.email}`}
+                  className="inline-block border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white px-4 py-2 rounded transition"
                 >
                   {siteContent?.contact?.email}
-                </Button>
+                </a>
               </CardContent>
             </Card>
             <Card className="bg-card border border-border hover:border-purple-500/50 transition-all duration-300">
@@ -202,14 +201,13 @@ export default function ContactPage() {
             Whether you're looking to book a performance, collaborate on a project, or just want to say hello, we'd love to hear from you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-white text-purple-900 hover:bg-gray-100 px-8 py-4 text-lg"
-              onClick={() => window.open(`mailto:${siteContent?.contact?.booking}`)}
+            <a
+              href={`mailto:${siteContent?.contact?.booking}`}
+              className="inline-block bg-white text-purple-900 hover:bg-gray-100 px-8 py-4 text-lg rounded transition"
             >
               <Mail className="mr-2 h-5 w-5" />
               Send Booking Inquiry
-            </Button>
+            </a>
             <Button
               size="lg"
               variant="outline"

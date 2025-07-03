@@ -11,7 +11,7 @@ export default function AdminDashboard() {
   }
 
   const handleViewWebsite = () => {
-    // Open the main website in a new tab
+    document.cookie = "viewingFullSite=true; path=/; SameSite=Lax";
     window.open('/', '_blank');
   };
 

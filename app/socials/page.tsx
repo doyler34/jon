@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Instagram, Twitter, Facebook, Youtube, ArrowRight } from 'lucide-react';
+import { XIcon } from '@/components/icons/SocialIcons';
 
 export default function SocialsPage() {
   return (
@@ -124,10 +125,14 @@ export default function SocialsPage() {
             {/* Twitter */}
             <Card className="bg-card border border-border hover:border-purple-500/50 transition-all duration-300 group hover:scale-105">
               <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Twitter className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow">
+                  <img
+                    src="/large-x-logo.png"
+                    alt="X"
+                    className="w-8 h-8"
+                  />
                 </div>
-                <CardTitle>Twitter</CardTitle>
+                <CardTitle>X</CardTitle>
                 <CardDescription className="text-muted-foreground">
                   @JonSpiritPrime
                 </CardDescription>
@@ -136,7 +141,7 @@ export default function SocialsPage() {
                 <p className="text-muted-foreground mb-4">Thoughts, updates, and real-time conversations</p>
                 <Button variant="outline" className="border-border text-foreground hover:bg-muted w-full">
                   <a href="https://x.com/jonspiritprime" target="_blank" rel="noopener noreferrer">
-                    Follow on Twitter
+                    Follow on X
                   </a>
                 </Button>
               </CardContent>
@@ -167,7 +172,11 @@ export default function SocialsPage() {
             <Card className="bg-card border border-border hover:border-purple-500/50 transition-all duration-300 group hover:scale-105">
               <CardHeader className="text-center">
                 <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-red-700 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Youtube className="w-8 h-8 text-white" />
+                  {/* Official YouTube SVG logo */}
+                  <svg viewBox="0 0 48 48" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="48" height="48" rx="24" fill="#FF0000"/>
+                    <path d="M34.5 20.5C34.5 19.1193 33.3807 18 32 18H16C14.6193 18 13.5 19.1193 13.5 20.5V27.5C13.5 28.8807 14.6193 30 16 30H32C33.3807 30 34.5 28.8807 34.5 27.5V20.5ZM21 27V21L27 24L21 27Z" fill="white"/>
+                  </svg>
                 </div>
                 <CardTitle>YouTube</CardTitle>
                 <CardDescription className="text-muted-foreground">
